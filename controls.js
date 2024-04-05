@@ -76,6 +76,10 @@ class Controls{
 		let beta = event.beta;
 		let gamma = event.gamma;
 
+		document.getElementById('alpha').textContent = alpha;
+		document.getElementById('beta').textContent = beta;
+		document.getElementById('gamma').textContent = gamma;
+			
 		if((alpha>=70 && alpha<=120)&&(gamma<=-60))
 		{
 			if(beta>=90 && beta<=120)
