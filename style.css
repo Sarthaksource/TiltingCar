@@ -8,6 +8,11 @@ body{
 	align-items: center;
 }
 
+#values{
+	margin-right: auto;
+	padding: 100px;
+}
+
 #carCanvas{
 	background-color: lightgray;
 }
