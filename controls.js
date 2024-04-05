@@ -63,36 +63,30 @@ class Controls{
 		}
 	}
 
-	#tiltCar()
-	{
-		window.addEventListener("deviceorientation", (event) => {
-		// const opacity = Math.min(1, Math.max(0, inv(50, 70, angle)));
-		
-		//Right Tilt: Alpha:90, Beta:120, Gamma: -90 
-		//Left Tilt: Alpha:90, Beta:60, Gamma: -90 
-		//No Tilt: Alpha:90, Beta:90, Gamma: -90 
+	#tiltCar() {
+        window.addEventListener("deviceorientation", (event) => {
+            let alpha = Math.round(event.alpha);
+            let beta = Math.round(event.beta);
+            let gamma = Math.round(event.gamma);
 
-		let alpha = event.alpha;
-		let beta = event.beta;
-		let gamma = event.gamma;
+            document.getElementById('alpha').textContent = alpha;
+            document.getElementById('beta').textContent = beta;
+            document.getElementById('gamma').textContent = gamma;
 
-		document.getElementById('alpha').textContent = alpha;
-		document.getElementById('beta').textContent = beta;
-		document.getElementById('gamma').textContent = gamma;
-			
-		if((alpha>=70 && alpha<=120)&&(gamma<=-60))
-		{
-			if(beta>=90 && beta<=120)
-			{
-				console.log("Right");
-				this.tiltRight = true;
-			}
-			else if(beta>=60 && beta<=90)
-			{
-				console.log("Left");
-				this.tiltLeft = true;
-			}
-		}
-		});
-	}
+            if ((gamma <= -40 && gamma >= -90) && (alpha >= 60 && alpha <= 110)) {
+                if (beta >= 90 && beta <= 120) {
+                    console.log("Right");
+                    this.tiltRight = true;
+                    this.tiltLeft = false;
+                } else if (beta >= 60 && beta <= 90) {
+                    console.log("Left");
+                    this.tiltLeft = true;
+                    this.tiltRight = false;
+                } else {
+                    this.tiltLeft = false;
+                    this.tiltRight = false;
+                }
+            }
+        });
+    }
 }
