@@ -64,32 +64,31 @@ class Controls{
 	}
 
 	#tiltCar() {
-            window.addEventListener("deviceorientation", (event) => {
-            let dir = event.alpha;
-            let tiltFB = event.beta;
-            let tiltLR = event.gamma;
+		window.addEventListener("deviceorientation", (event) => {
+			let dir = event.alpha;
+			let tiltFB = event.beta;
+			let tiltLR = event.gamma;
 
-            document.getElementById('alpha').textContent = Math.ceil(dir);
-            document.getElementById('beta').textContent = Math.ceil(tiltFB);
-            document.getElementById('gamma').textContent = Math.ceil(tiltLR);
+			document.getElementById('alpha').textContent = Math.ceil(dir);
+			document.getElementById('beta').textContent = Math.ceil(tiltFB);
+			document.getElementById('gamma').textContent = Math.ceil(tiltLR);
 
-            if (tiltFB >= 20 && tiltFB <= 100) {
-                if (tiltLR > 0){
-                	console.log("Right");
-                	this.tiltRight = true;
-                	this.tiltLeft = false;
-                }
-                else if (tiltLR < 0) {
-                    console.log("Left");
-                    this.tiltLeft = true;
-                    this.tiltRight = false;
-                }
-                else {
-                    this.tiltLeft = false;
-                    this.tiltRight = false;
-                }
-            }
-            });
-        }
-    }
+			if (tiltFB >= 20 && tiltFB <= 100) {
+				if (tiltLR > 0){
+					console.log("Right");
+					this.tiltRight = true;
+					this.tiltLeft = false;
+				}
+				else if (tiltLR < 0) {
+					console.log("Left");
+					this.tiltLeft = true;
+					this.tiltRight = false;
+				}
+				else {
+					this.tiltLeft = false;
+					this.tiltRight = false;
+				}
+			}
+		});
+	}
 }
