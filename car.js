@@ -12,7 +12,7 @@ class Car{
 		this.friction = 0.05;
 		this.angle = 0;
 
-		this.angleFactor = 0.03;
+		this.angleFactor = 0.06;
 
 		this.damaged = false;
 
