@@ -72,16 +72,18 @@ class Controls{
 			tiltLR += 90;
 
 			// document.getElementById('alpha').textContent = Math.ceil(dir);
-			document.getElementById('beta').textContent = tiltLR/(180-10);
-			document.getElementById('gamma').textContent = tiltLR;
+			document.getElementById('gamma').textContent = Math.round(tiltLR);
 
-
+			//tiltLR/(180-10);
+			
 			if (tiltLR > 95){
+				document.getElementById('beta').textContent = "Right";
 				console.log("Right");
 				this.tiltRight = true;
 				this.tiltLeft = false;
 			}
 			else if (tiltLR < 85) {
+				document.getElementById('beta').textContent = "Left";
 				console.log("Left");
 				this.tiltLeft = true;
 				this.tiltRight = false;
