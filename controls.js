@@ -76,12 +76,12 @@ class Controls{
 			document.getElementById('gamma').textContent = tiltLR;
 
 
-			if (tiltLR > 0){
+			if (tiltLR > 95){
 				console.log("Right");
 				this.tiltRight = true;
 				this.tiltLeft = false;
 			}
-			else if (tiltLR < 0) {
+			else if (tiltLR < 85) {
 				console.log("Left");
 				this.tiltLeft = true;
 				this.tiltRight = false;
