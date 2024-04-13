@@ -1,5 +1,5 @@
 class Car{
-	constructor(x, y, width, height, controlType, maxSpeed = 3, color="blue")
+	constructor(x, y, width, height, controlType, maxSpeed = Car.getMaxSpeedValue(), color="blue")
 	{
 		this.x = x;
 		this.y = y;
@@ -46,6 +46,11 @@ class Car{
 		}
 	}
 
+	static getMaxSpeedValue()
+	{
+		return 3;
+	}
+	
 	update(roadBorders, traffic)
 	{
 		if(!this.damaged)
